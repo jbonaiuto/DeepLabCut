@@ -29,7 +29,7 @@ class DraggablePoint:
         self.final_point = (0.0, 0.0)
         self.annot = self.point.axes.annotate("", xy=(0,0), xytext=(20,20),textcoords="offset points",bbox=dict(boxstyle="round", fc="w"),arrowprops=dict(arrowstyle="->"))
         self.annot.set_visible(False)
-        self.coords = []
+        self.coords = [point.center]
 
 
     def connect(self):
