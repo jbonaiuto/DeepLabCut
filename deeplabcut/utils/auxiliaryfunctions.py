@@ -232,8 +232,8 @@ def Getlistofvideos(videos,videotype):
         Videos = sample(videolist,len(videolist)) # this is useful so multiple nets can be used to analzye simultanously
     else:
         if isinstance(videos,str):
-            if os.path.isfile(videos): # #or just one direct path!
-                Videos=[v for v in videos if os.path.isfile(v) and ('labeled.mp4' not in v)]
+            if os.path.isfile(videos) and 'labeled.mp4' not in videos: # #or just one direct path!
+                Videos=[videos]
             else:
                 Videos=[]
         else:
